@@ -28,6 +28,8 @@ import moment from "moment";
 const context = loader({ moment });
 
 const script = `
+const moment = require('moment');
+
 module.exports = moment(1111111111111).format('MM/DD/YY');
 `;
 
@@ -42,7 +44,6 @@ Scripts can require one another by relative path:
 
 ```js
 import loader from "web-module-loader";
-import moment from "moment";
 
 const context = loader();
 
