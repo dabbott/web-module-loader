@@ -1,0 +1,15 @@
+{
+  "name": "web-module-loader",
+  "version": "0.1.0",
+  "description": "Evaluate commonjs modules at runtime",
+  "main": "index.js",
+  "author": "Devin Abbott <devinabbott@gmail.com> (http://github.com/dabbott)",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.2.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  }
+}
