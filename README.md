@@ -12,8 +12,8 @@ npm install --save web-module-loader
 
 There are two APIs:
 
-- _`loader`_ - A higher-level API that allows providing top-level modules by name (e.g. `moment`), and registers exports as scripts are evaluated.
-- _`evaluate`_ - A lower-level API that allows passing a `require` function and then evaluating a script that can look up modules by calling the provided `require`.
+- [**`loader`**](#loader) - A higher-level API that allows providing top-level modules by name (e.g. `moment`), and registers exports as scripts are evaluated.
+- [**`evaluate`**](#evaluate) - A lower-level API that allows passing a `require` function and then evaluating a script that can look up modules by calling the provided `require`.
 
 ### Loader
 
@@ -74,7 +74,7 @@ console.log(result); // => 3
 If `moment` is installed, for example:
 
 ```js
-import loader from "web-module-loader";
+import { evaluate } from "web-module-loader";
 import moment from "moment";
 
 const require = name => {
@@ -90,7 +90,7 @@ const script = `
 module.exports = moment(1111111111111).format('MM/DD/YY');
 `;
 
-const result = loader(require)(script);
+const result = evaluate(require)(script);
 
 console.log(result); // => 03/17/05
 ```
@@ -100,7 +100,7 @@ console.log(result); // => 03/17/05
 If you want to evaluate multiple files that can `require` one another, consider creating an object to store exports by name:
 
 ```js
-import loader from "web-module-loader";
+import { evaluate } from "web-module-loader";
 
 const moduleMap = {};
 
@@ -115,7 +115,7 @@ const require = name => {
 const scriptA = "module.exports = 3;";
 const scriptB = "module.exports = 4 + require('a')";
 
-const bundler = loader(require);
+const bundler = evaluate(require);
 moduleMap.a = bundler(scriptA);
 moduleMap.b = bundler(scriptB);
 
