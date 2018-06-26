@@ -50,7 +50,7 @@ function context(topLevelModuleMap, pathModuleMap) {
     // Next, try to find locally registered modules, e.g. "./foo/a.js"
     var resolvedName = resolveName(name, __filename);
 
-    for (let i = 0; i < extensions.length; i++) {
+    for (var i = 0; i < extensions.length; i++) {
       var extension = extensions[i];
 
       if (resolvedName + extension in pathModuleMap) {
@@ -76,7 +76,7 @@ function context(topLevelModuleMap, pathModuleMap) {
   };
 }
 
-const exportObject = context;
+var exportObject = context;
 
 exportObject.wrap = wrap;
 exportObject.createFunction = createFunction;
