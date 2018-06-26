@@ -44,7 +44,7 @@ function context(topLevelModuleMap, pathModuleMap) {
     }
 
     if (!__filename) {
-      throw new Error(`Module ${name} not found!`);
+      throw new Error("Module " + name + " not found!");
     }
 
     // Next, try to find locally registered modules, e.g. "./foo/a.js"
@@ -58,7 +58,7 @@ function context(topLevelModuleMap, pathModuleMap) {
       }
     }
 
-    throw new Error(`Module ${name} not found!`);
+    throw new Error("Module " + name + " not found!");
   }
 
   return function evaluateInContext(__filename, __dirname) {
