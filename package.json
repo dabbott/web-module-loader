@@ -1,6 +1,6 @@
 {
   "name": "web-module-loader",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Evaluate commonjs modules at runtime",
   "main": "index.js",
   "author": "Devin Abbott <devinabbott@gmail.com> (http://github.com/dabbott)",
