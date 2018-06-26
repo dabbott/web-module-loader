@@ -39,9 +39,9 @@ function resolveName(name, filename) {
 }
 
 module.exports = {
-  join,
-  baseName,
-  dirName,
-  resolveName,
-  extensions
+  join: join,
+  baseName: baseName,
+  dirName: dirName,
+  resolveName: resolveName,
+  extensions: extensions
 };
