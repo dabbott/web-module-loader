@@ -1,4 +1,5 @@
-var { resolveName, extensions } = require("./path");
+var resolveName = require("./path").resolveName;
+var extensions = require("./path").extensions;
 
 var wrapper = [
   "return (function (exports, require, module, __filename, __dirname) { ",
