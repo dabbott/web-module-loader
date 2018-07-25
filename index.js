@@ -18,12 +18,12 @@ function createFunction(script) {
   }
 }
 
-function evaluate(require, __filename, __dirname) {
+function evaluate(requireModule, __filename, __dirname) {
   var exports = {};
   var module = { exports: exports };
 
   function requireWithContext(name) {
-    return require(name, __filename, __dirname);
+    return requireModule(name, __filename, __dirname);
   }
 
   return function evaluateInner(script) {
